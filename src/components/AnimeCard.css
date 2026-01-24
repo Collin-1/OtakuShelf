@@ -1,0 +1,110 @@
+.anime-card {
+  width: 100%;
+  cursor: pointer;
+  transition:
+    transform var(--transition-fast),
+    z-index 0s;
+  position: relative;
+  /* Ensure parent allows overflow if needed (usually handled by container padding) */
+}
+
+.anime-card:hover {
+  z-index: 10;
+  /* We aren't doing the complex portal expansion, just a small scale */
+  transform: scale(1.05);
+}
+
+.anime-card-image-wrapper {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  aspect-ratio: 2 / 3;
+}
+
+.anime-card:hover .anime-card-image-wrapper {
+  box-shadow: var(--shadow-lg);
+}
+
+.anime-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.anime-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.anime-card:hover .anime-card-overlay {
+  opacity: 1;
+}
+
+.anime-card-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.card-btn {
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: var(--color-text-primary);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.card-btn:hover {
+  background-color: var(--color-bg-secondary);
+  transform: scale(1.1);
+}
+
+.anime-card-info {
+  margin-top: var(--spacing-xs);
+}
+
+.anime-card-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--color-text-primary);
+}
+
+.anime-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+.anime-score {
+  font-weight: 700;
+}
+
+.anime-genres {
+  font-size: 10px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

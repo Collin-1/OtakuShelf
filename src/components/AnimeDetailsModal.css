@@ -1,0 +1,136 @@
+.modal-loading {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--color-text-secondary);
+}
+
+.modal-banner {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.modal-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--color-bg-modal) 0%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+}
+
+.modal-header-content {
+  padding: var(--spacing-xl);
+  width: 100%;
+}
+
+.modal-title {
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 1);
+  color: var(--color-text-primary);
+}
+
+.modal-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+.score-match {
+  color: #46d369;
+}
+
+.modal-format-tag {
+  border: 1px solid currentColor;
+  padding: 0 4px;
+  font-size: 0.8rem;
+  border-radius: 2px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.modal-body {
+  padding: var(--spacing-xl);
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-xl);
+}
+
+.modal-description {
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  white-space: pre-wrap;
+}
+
+.modal-info-block {
+  margin-bottom: var(--spacing-md);
+}
+
+.modal-info-block .label {
+  display: block;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+.genres-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.genre-pill {
+  background-color: var(--color-bg-secondary);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+}
+
+.modal-trailer {
+  margin-top: var(--spacing-xl);
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  position: relative;
+  height: 0;
+  margin-top: var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+@media (max-width: 768px) {
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+  .modal-banner {
+    height: 250px;
+  }
+  .modal-title {
+    font-size: var(--font-size-xl);
+  }
+}

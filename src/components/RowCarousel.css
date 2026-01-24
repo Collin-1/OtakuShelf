@@ -1,0 +1,85 @@
+.row-carousel-container {
+  margin-bottom: var(--spacing-xl);
+  padding: 0 var(--spacing-md); /* Align with container somewhat or bleed out */
+}
+
+/* To allow full bleed on edges but content aligned, we might use padding on container 
+   but for Netflix style, rows usually span nearly full width 
+*/
+
+.row-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-xs); /* visual adjustment */
+}
+
+.row-wrapper {
+  position: relative;
+  /* Hover to show arrows? */
+}
+
+.row-content {
+  display: flex;
+  gap: var(--spacing-md);
+  overflow-x: auto;
+  padding-bottom: var(--spacing-md);
+  scroll-behavior: smooth;
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.row-content::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.row-item {
+  min-width: 160px;
+  max-width: 160px;
+}
+@media (min-width: 768px) {
+  .row-item {
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
+
+.row-arrow {
+  position: absolute;
+  top: 0;
+  bottom: var(--spacing-md); /* Account for padding bottom of row-content */
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity var(--transition-fast),
+    background-color var(--transition-fast);
+  color: var(--color-text-primary);
+}
+
+.row-wrapper:hover .row-arrow {
+  opacity: 1;
+}
+
+.row-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.1);
+}
+
+.row-arrow.left {
+  left: 0;
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+}
+
+.row-arrow.right {
+  right: 0;
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+}

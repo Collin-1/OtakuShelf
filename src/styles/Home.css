@@ -1,0 +1,6 @@
+.rows-section {
+  padding-bottom: var(--spacing-2xl);
+  /* Improve visual by pulling up slightly if transparent bg? 
+       No, let's just stick to clean layout.
+    */
+}
