@@ -70,7 +70,7 @@ body:not(:has(.hero-banner)) .navbar,
 
 .badge {
   background-color: var(--color-accent);
-  color: white;
+  color: var(--color-text-inverse);
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-full);
   font-size: 0.7rem;

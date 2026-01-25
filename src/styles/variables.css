@@ -1,16 +1,19 @@
 :root {
-  /* Colors - Dark Mode (Netflix-like) */
-  --color-bg-primary: #141414;
-  --color-bg-secondary: #1f1f1f;
-  --color-bg-tertiary: #2f2f2f;
-  --color-bg-modal: #181818;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #b3b3b3;
-  --color-text-inverse: #ffffff;
-  --color-accent: #e50914; /* Netflix Red */
-  --color-accent-hover: #f40612;
-  --color-border: #333333;
-  --color-skeleton: #2f2f2f;
+  /* Colors - "Cyberpunk / Neo-Tokyo" Theme */
+  --color-bg-primary: #050510; /* Deep Midnight Blue */
+  --color-bg-secondary: #0f0f25; /* Dark Blue-Grey */
+  --color-bg-tertiary: #1a1a3d;
+  --color-bg-modal: #0a0a1a;
+
+  --color-text-primary: #e0fbff; /* Cyan-tinted White */
+  --color-text-secondary: #8ca0b0; /* Cool Grey */
+  --color-text-inverse: #000000; /* Black text on Neon accents */
+
+  --color-accent: #00f3ff; /* Neon Cyan */
+  --color-accent-hover: #00d2de;
+
+  --color-border: #1f3a52; /* Tech Blue-Grey */
+  --color-skeleton: #0f0f25;
 
   /* Typography */
   --font-family:

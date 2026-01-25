@@ -43,11 +43,11 @@ img {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #ccc;
+  background: var(--color-bg-tertiary);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: var(--color-text-secondary);
 }
 
 /* Utility Classes */
