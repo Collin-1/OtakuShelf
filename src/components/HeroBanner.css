@@ -1,0 +1,116 @@
+.hero-banner {
+  height: 80vh; /* Netflix style tall hero */
+  max-height: 700px;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3) 0%,
+      rgba(20, 20, 20, 0) 50%,
+      var(--color-bg-primary) 100%
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.7) 30%,
+      rgba(0, 0, 0, 0) 100%
+    );
+}
+
+/* Light mode overlay strategy:
+   The banner image is likely colorful. We want text to be readable.
+   Netflix uses dark background so white text pops. 
+   For Light mode netflix, we need a light gradient overlay so dark text pops on left. 
+*/
+
+.hero-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px; /* Constrain width of text */
+  margin-left: var(
+    --spacing-lg
+  ); /* Override container centering slightly if needed, but container class handles it */
+  padding-top: var(--navbar-height);
+}
+
+.hero-title {
+  font-size: var(--font-size-3xl);
+  line-height: 1.1;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-primary);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text-secondary);
+}
+
+.hero-score {
+  color: #46d369; /* Netflix match score green */
+  font-weight: 700;
+}
+
+.tag {
+  border: 1px solid var(--color-text-secondary);
+  padding: 0 4px;
+  font-size: 0.8rem;
+  border-radius: 2px;
+}
+
+.hero-description {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.4;
+  color: var(--color-text-primary);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .hero-banner {
+    background-position: center center;
+    height: 60vh;
+  }
+  .hero-title {
+    font-size: var(--font-size-2xl);
+  }
+  .hero-description {
+    font-size: var(--font-size-base);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      var(--color-bg-primary) 100%
+    );
+  }
+}
