@@ -1,16 +1,16 @@
 :root {
-  /* Colors - Light Mode Netflix-ish */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f4f4f4;
-  --color-bg-tertiary: #e5e5e5;
-  --color-bg-modal: #ffffff;
-  --color-text-primary: #141414; /* Nearly black */
-  --color-text-secondary: #666666; /* Grey */
+  /* Colors - Dark Mode (Netflix-like) */
+  --color-bg-primary: #141414;
+  --color-bg-secondary: #1f1f1f;
+  --color-bg-tertiary: #2f2f2f;
+  --color-bg-modal: #181818;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
   --color-text-inverse: #ffffff;
-  --color-accent: #e50914; /* Netflix Red-ish */
-  --color-accent-hover: #b20710;
-  --color-border: #e6e6e6;
-  --color-skeleton: #dddddd;
+  --color-accent: #e50914; /* Netflix Red */
+  --color-accent-hover: #f40612;
+  --color-border: #333333;
+  --color-skeleton: #2f2f2f;
 
   /* Typography */
   --font-family:

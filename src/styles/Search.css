@@ -37,7 +37,8 @@
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgba(229, 9, 20, 0.1);
-  background-color: white;
+  background-color: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
 }
 
 .no-results {

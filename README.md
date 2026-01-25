@@ -55,5 +55,3 @@ Powered by the [AniList API](https://github.com/AniList/ApiV2-GraphQL-Docs).
 - **Data Persistence**: "My List" is stored in browser `localStorage`. Clearing cache will wipe the list.
 
 ---
-
-Created by [Your Name] for Portfolio.
