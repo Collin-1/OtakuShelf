@@ -34,13 +34,13 @@
 }
 
 .row-item {
-  min-width: 160px;
-  max-width: 160px;
+  min-width: 320px;
+  max-width: 320px;
 }
 @media (min-width: 768px) {
   .row-item {
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 400px;
+    max-width: 400px;
   }
 }
 

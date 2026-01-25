@@ -42,6 +42,7 @@ export const MyListProvider = ({ children }) => {
         averageScore: anime.averageScore,
         format: anime.format,
         seasonYear: anime.seasonYear,
+        genres: anime.genres || [],
       };
       return [...prev, minimalAnime];
     });

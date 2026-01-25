@@ -1,6 +1,7 @@
 import React from "react";
 import { useMyList } from "../context/MyListContext";
-import { FaPlay, FaPlus, FaCheck, FaInfoCircle } from "react-icons/fa"; // Assuming react-icons
+import { FaPlus, FaCheck, FaInfoCircle } from "react-icons/fa"; // Assuming react-icons
+import { sanitizeHtml, truncateText } from "../utils/textUtils";
 import "./AnimeCard.css";
 
 const AnimeCard = ({ anime, onClick }) => {
@@ -13,6 +14,11 @@ const AnimeCard = ({ anime, onClick }) => {
     e.stopPropagation();
     toggleList(anime);
   };
+
+  // Strip tags for synopsis preview
+  const plainDescription = anime.description
+    ? sanitizeHtml(anime.description)
+    : "";
 
   return (
     <div className="anime-card" onClick={() => onClick(anime)}>
@@ -39,11 +45,13 @@ const AnimeCard = ({ anime, onClick }) => {
         </div>
       </div>
       <div className="anime-card-info">
-        <h4 className="anime-card-title">{anime.title.userPreferred}</h4>
+        <h4 className="anime-card-title" title={anime.title.userPreferred}>
+          {anime.title.userPreferred}
+        </h4>
         <div className="anime-card-meta">
           <span
             className="anime-score"
-            style={{ color: anime.averageScore >= 75 ? "green" : "inherit" }}
+            style={{ color: anime.averageScore >= 75 ? "#46d369" : "inherit" }}
           >
             {anime.averageScore ? `${anime.averageScore}%` : "N/A"}
           </span>
@@ -51,8 +59,11 @@ const AnimeCard = ({ anime, onClick }) => {
           <span>{anime.format}</span>
         </div>
         <div className="anime-genres">
-          {anime.genres.slice(0, 2).join(" • ")}
+          {anime.genres?.slice(0, 3).join(" • ")}
         </div>
+        <p className="anime-card-synopsis">
+          {truncateText(plainDescription, 150)}
+        </p>
       </div>
     </div>
   );
