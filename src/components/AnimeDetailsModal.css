@@ -33,7 +33,7 @@
 .modal-title {
   font-size: var(--font-size-3xl);
   margin-bottom: var(--spacing-sm);
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   color: var(--color-text-primary);
 }
 

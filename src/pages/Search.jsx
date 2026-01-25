@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useSearchParams } from "react-router-dom";
 import FiltersBar from "../components/FiltersBar";
 import AnimeCard from "../components/AnimeCard";
 import Pagination from "../components/Pagination";
@@ -9,7 +10,8 @@ import { FaSearch } from "react-icons/fa";
 import "../styles/Search.css";
 
 const Search = ({ onAnimeClick }) => {
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get("q") || "");
   const [filters, setFilters] = useState({
     genre: "",
     format: "",
@@ -35,6 +37,25 @@ const Search = ({ onAnimeClick }) => {
     }, 500);
     return () => clearTimeout(handler);
   }, [query]);
+
+  // Update URL to match search query
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    if (debouncedQuery) {
+      params.set("q", debouncedQuery);
+    } else {
+      params.delete("q");
+    }
+    setSearchParams(params, { replace: true });
+  }, [debouncedQuery]);
+
+  // Update query if URL changes (e.g. navigation from Navbar)
+  useEffect(() => {
+    const q = searchParams.get("q") || "";
+    if (q !== query) {
+      setQuery(q);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     // Reset page when filters or query change

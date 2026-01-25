@@ -82,12 +82,13 @@ img {
 }
 
 .btn-secondary {
-  background-color: rgba(109, 109, 110, 0.4);
-  color: var(--color-text-primary);
-  background-color: #e6e6e6;
+  background-color: rgba(109, 109, 110, 0.7); /* Darker translucent grey */
+  color: #ffffff;
+  backdrop-filter: blur(4px); /* Optional modern touch */
 }
 .btn-secondary:hover {
-  background-color: #d4d4d4;
+  background-color: rgba(109, 109, 110, 0.9);
+  color: #ffffff;
 }
 
 .btn-icon {
